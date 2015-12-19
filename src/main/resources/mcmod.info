@@ -1,0 +1,21 @@
+[
+{
+  "modid": "ShutTheFUp",
+  "name": "Shut The F Up",
+  "description": "Background music is annoying.",
+  "version": "2.0.0",
+  "mcversion": "1.8.8",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "Six-One-Three"
+  ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
