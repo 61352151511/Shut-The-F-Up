@@ -22,22 +22,14 @@ apply plugin: 'eclipse'
 ext.configFile = file('build.properties')
 ext.config = parseConfig(configFile)
 
-version = "${config.mc_version}-${config.mod_version_major}.${config.mod_version_minor}"
+version = "${config.mc_version}-${config.mod_version_major}.${config.mod_version_minor}.${config.mod_version_build}"
 group= "${config.group}"
 archivesBaseName = "${config.archive_base}"
 
 minecraft {
-    version = "${config.mc_version}-${config.forge_version}-${config.mc_version}"
+    version = "${config.mc_version}-${config.forge_version}"
     runDir = "eclipse"
     mappings = "${config.mappings}"
-}
-
-def parseConfig(File config) {
-    config.withReader {
-        def prop = new Properties()
-        prop.load(it)
-        return (new ConfigSlurper().parse(prop))
-    }
 }
 
 repositories {
@@ -47,8 +39,7 @@ repositories {
      }
 }
 
-dependencies {
-}
+dependencies {}
 
 processResources
 {
@@ -63,5 +54,13 @@ processResources
         
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+def parseConfig(File config) {
+    config.withReader {
+        def prop = new Properties()
+        prop.load(it)
+        return (new ConfigSlurper().parse(prop))
     }
 }

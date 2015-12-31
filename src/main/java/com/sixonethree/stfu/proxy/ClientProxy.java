@@ -5,12 +5,9 @@ import net.minecraftforge.common.MinecraftForge;
 import com.sixonethree.stfu.handler.TickHandler;
 
 public class ClientProxy implements IProxy {
-	private boolean registered = false;
+	private TickHandler tickHandler = new TickHandler();
 	
 	@Override public void init() {
-		if (!registered) {
-			MinecraftForge.EVENT_BUS.register(new TickHandler());
-		}
-		registered = true;
+		MinecraftForge.EVENT_BUS.register(tickHandler);
 	}
 }
