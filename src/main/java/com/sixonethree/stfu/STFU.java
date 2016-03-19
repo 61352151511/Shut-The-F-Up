@@ -8,12 +8,12 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import com.sixonethree.stfu.handler.ConfigurationHandler;
-import com.sixonethree.stfu.proxy.IProxy;
+import com.sixonethree.stfu.proxy.ClientProxy;
 import com.sixonethree.stfu.utility.LogHelper;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, clientSideOnly = true) public class STFU {
 	@Mod.Instance(Reference.MOD_ID) public static STFU instance;
-	@SidedProxy(clientSide = Reference.CLIENT_PROXY) public static IProxy proxy;
+	@SidedProxy(clientSide = Reference.CLIENT_PROXY) public static ClientProxy proxy;
 	
 	@Mod.EventHandler public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
