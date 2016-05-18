@@ -2,9 +2,9 @@
 {
   "modid": "ShutTheFUp",
   "name": "Shut The F Up",
-  "description": "Background music is annoying.",
-  "version": "3.0.1",
-  "mcversion": "1.9",
+  "description": "Sounds can be annoying.",
+  "version": "3.1.0",
+  "mcversion": "1.9.4",
   "url": "",
   "updateUrl": "",
   "authorList": [
